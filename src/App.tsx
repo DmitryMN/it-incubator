@@ -10,7 +10,8 @@ function App() {
           <PageTitle title={"My friends"}/>
           Article 1
           <Rating value={2}/>
-          <Accordion title={"Menu"}/>
+          <Accordion title={"Menu"} collapsed={true}/>
+          <Accordion title={"Users"} collapsed={false}/>
           Article 2
           <Rating value={4}/>
       </div>
