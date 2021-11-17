@@ -5,6 +5,8 @@ import Rating from "./components/Raiting/Raiting";
 import OnOff from './components/onOff/OnOff';
 import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
 import UnReiting from './components/Raiting/UnRaiting';
+import { UncontrolInput, UncontrolInputRef } from './components/ControlAndUncontrolInput/UncontrolInput';
+import {ControllInput} from './components/ControlAndUncontrolInput/ControllInput';
 
 const App = () => {
   return (
@@ -21,6 +23,9 @@ const App = () => {
           <OnOff onOff={false}/>
           <UncontrolledAccordion title={"Menu"}/>
           <UnReiting />
+          <ControllInput/>
+          <UncontrolInput/>
+          <UncontrolInputRef/>
       </div>
   );
 }
