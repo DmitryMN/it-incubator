@@ -12,7 +12,7 @@ export const UncontrolInput = () => {
         <div>
             <div>
                 <h4>UnControlled Input</h4>
-                <input onChange={callBack}></input>
+                <input onChange={callBack}/>
                 <span>{"Input text: " + value}</span>
             </div>
         </div>
@@ -33,7 +33,7 @@ export const UncontrolInputRef = () => {
         <div>
             <div>
                 <h4>UnControlled Ref Input</h4>
-                <input ref={inputRef}></input>
+                <input ref={inputRef}/>
                 <button onClick={callBack}>add</button>
                 <span>{"Input text: " + value}</span>
             </div>

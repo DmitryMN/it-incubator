@@ -9,7 +9,7 @@ export const ControllInput = () => {
     return (
         <div>
             <h4>Controlled Input</h4>
-            <input onChange={callBack} value={value}></input>
+            <input onChange={callBack} value={value}/>
         </div>
     );
 }
