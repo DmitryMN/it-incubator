@@ -5,12 +5,20 @@ import Rating from "./components/Raiting/Raiting";
 import OnOff from './components/onOff/OnOff';
 import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
 import UnReiting from './components/Raiting/UnRaiting';
+import Select from './components/Select/Select';
 
 
 export type UserType = {
     name: string
     value: number
 }
+
+
+export type FruitsType = {
+    id: string
+    title: string
+}
+
 
 
 const App = () => {
@@ -27,6 +35,13 @@ const App = () => {
         {name: "Meat", value: 2},
         {name: "Bread", value: 3},
         {name: "Water", value: 4}
+    ];
+
+    const fruits: Array<FruitsType> = [
+        {id: "1", title: "Apple"},
+        {id: "2", title: "Peach"},
+        {id: "3", title: "Melon"},
+        {id: "4", title: "limon"}
     ];
 
     const callBackAccordion = (name: string) => {
@@ -47,6 +62,7 @@ const App = () => {
             <OnOff onOff={false} />
             <UncontrolledAccordion title={"Menu"} />
             <UnReiting />
+            <Select/>
         </div>
     );
 }
