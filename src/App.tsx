@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import Rating from "./components/Raiting/Raiting";
@@ -41,11 +41,20 @@ const App = () => {
         {id: "1", title: "Apple"},
         {id: "2", title: "Peach"},
         {id: "3", title: "Melon"},
-        {id: "4", title: "limon"}
+        {id: "4", title: "lemon"}
     ];
+
+    const [value, setValue] = useState<string>(fruits[0].title);
 
     const callBackAccordion = (name: string) => {
         alert(`hello my friend - ${name}`);
+    }
+
+    const callBackSetValue = (id: string) => {
+        let findItemFruit =  fruits.find((fruit) => fruit.id === id);
+        if (findItemFruit) {
+            setValue(findItemFruit.title);
+        }
     }
 
     return (
@@ -62,7 +71,7 @@ const App = () => {
             <OnOff onOff={false} />
             <UncontrolledAccordion title={"Menu"} />
             <UnReiting />
-            <Select/>
+            <Select fruits={fruits} value={value} callBackSetValue={callBackSetValue}/>
         </div>
     );
 }
