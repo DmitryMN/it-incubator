@@ -17,32 +17,40 @@ const Select = ({fruits, value, callBackSetValue}: SelectPropsType) => {
         setCollapsed(!collapsed);
     }
 
-
     return(
         <div>
             <div className="select" onClick={onClickHandler}>{value}</div>
-            {collapsed && <Fruit fruits={fruits} callBackSetValue={callBackSetValue} setCollapsed={setCollapsed}/>}
+            {collapsed && <Fruit value={value} fruits={fruits}  callBackSetValue={callBackSetValue} setCollapsed={setCollapsed}/>}
         </div>
     );
 }
 
 type FruitPropsType = {
+    value: string
     fruits: Array<FruitsType>
     callBackSetValue: (id: string) => void
     setCollapsed: (value: boolean) => void
 }
 
-export const Fruit = ({fruits, callBackSetValue, setCollapsed}: FruitPropsType) => {
+export const Fruit = ({value, fruits, callBackSetValue, setCollapsed}: FruitPropsType) => {
+
+    const [hoveredItem, setHoveredItem] = useState<string>(value)
 
     const onClickHandler = (id: string) => {
         callBackSetValue(id);
         setCollapsed(false);
     }
 
+    const onMouseEnterHandler = (value: string) => {
+        setHoveredItem(value)
+    }
+
+    const active: string = "fruit" + " " + "active";
+
     return(
         <div>
             {fruits.map(fruit => {
-                return <div className="red" onClick={() => onClickHandler(fruit.id)} key={fruit.id}>{fruit.title}</div>
+                return <div className={hoveredItem === fruit.title ? active : "fruit"} onMouseEnter={() => {onMouseEnterHandler(fruit.title)}} onClick={() => onClickHandler(fruit.id)} key={fruit.id}>{fruit.title}</div>
             })}
         </div>
     );

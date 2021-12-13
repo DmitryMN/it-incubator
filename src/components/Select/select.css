@@ -2,7 +2,10 @@
     width: 180px;
     border: 1px solid black;
 }
-.red {
+.fruit {
     width: 80px;
     border: 1px solid aquamarine;
+}
+.active {
+    background-color: cadetblue;
 }
