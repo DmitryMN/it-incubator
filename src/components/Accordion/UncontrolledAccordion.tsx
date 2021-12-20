@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useReducer} from "react";
 
 type UncontrolledAccordionPropsType = {
     title: string
@@ -8,10 +8,28 @@ type AccordionTitleProps = {
     title: string
 }
 
+type ActionType = {
+    type: string
+}
+
+const collapseAC: ActionType = {type: "ACTIVE_UNACTIVE"}
+
+const reducer = (state: boolean, action: ActionType) => {
+    switch(action.type) {
+        case "ACTIVE_UNACTIVE":
+            return !state;
+        default:
+            return state;
+    }
+}
+
 const UncontrolledAccordion = (props: UncontrolledAccordionPropsType) => {
-    const [collapsed, setCollapsed] = useState(true);
+    // const [collapsed, setCollapsed] = useState(true);
+    const [collapsed, dispatch] = useReducer(reducer, true);
+
     const onChangeCollapsed = () => {
-        setCollapsed(!collapsed);
+        // setCollapsed(!collapsed);
+        dispatch(collapseAC);
     }
 
     return(
@@ -24,7 +42,7 @@ const UncontrolledAccordion = (props: UncontrolledAccordionPropsType) => {
 }
 
 const AccordionTitle = (props: any ) => {
-    return <h3>Uncontrolled</h3>
+    return <h3>Uncontrolled accordion</h3>
 }
 
 const AccordionBody = () => {
