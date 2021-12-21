@@ -6,6 +6,7 @@ import OnOff from './components/onOff/OnOff';
 import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
 import UnReiting from './components/Raiting/UnRaiting';
 import Select from './components/Select/Select';
+import {Example1} from "./components/ReactMemo/ReactMemo";
 
 
 export type UserType = {
@@ -19,10 +20,7 @@ export type FruitsType = {
     title: string
 }
 
-
-
 const App = () => {
-
     const users: Array<UserType> = [
         {name: "Alex", value: 1},
         {name: "Bob", value: 2},
@@ -72,6 +70,7 @@ const App = () => {
             <UncontrolledAccordion title={"Menu"} />
             <UnReiting />
             <Select fruits={fruits} value={value} callBackSetValue={callBackSetValue}/>
+            <Example1 />
         </div>
     );
 }
