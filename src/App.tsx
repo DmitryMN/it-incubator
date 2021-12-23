@@ -7,6 +7,7 @@ import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion'
 import UnReiting from './components/Raiting/UnRaiting';
 import Select from './components/Select/Select';
 import {Example1} from "./components/ReactMemo/ReactMemo";
+import {Example2} from "./components/ReactMemo/UseMemo";
 
 
 export type UserType = {
@@ -71,6 +72,7 @@ const App = () => {
             <UnReiting />
             <Select fruits={fruits} value={value} callBackSetValue={callBackSetValue}/>
             <Example1 />
+            <Example2 />
         </div>
     );
 }

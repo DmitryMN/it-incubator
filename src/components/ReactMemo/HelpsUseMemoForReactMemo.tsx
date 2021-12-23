@@ -1,12 +1,7 @@
-import React, {useState} from "react";
-
-const NewMessagesCounter = (props: {count: number}) => {
-    return(
-        <div>{props.count}</div>
-    );
-}
+import React, {useMemo, useState} from "react";
 
 const UsersSecret = (props: {users: Array<string>}) => {
+    console.log("UsersSecret")
     return(
         <div>
             {props.users.map((user, index) => <div key={index}>{user}</div>)}
@@ -16,7 +11,8 @@ const UsersSecret = (props: {users: Array<string>}) => {
 
 const Users = React.memo(UsersSecret);
 
-export const Example1 = () => {
+export const HelpsUseMemoForReactMemo = () => {
+    console.log("HelpsUseMemo");
     const [counter, setCounter] = useState(0);
     const [users, setUsers] = useState<Array<string>>(["Ann", "Bob", "Alex", "Den"]);
 
@@ -24,16 +20,15 @@ export const Example1 = () => {
         setCounter(counter+1);
     }
 
-    const addUserHandler = () => {
-        setUsers([...users, "Kevin"]);
-    }
+    const newUsers = useMemo( () => {
+       return users.filter(user => user.toLowerCase().indexOf("a") > -1)
+    } , [users]);
 
     return(
         <div>
             <button onClick={counterHandler}>+</button>
-            <button onClick={addUserHandler}>add user</button>
-            <NewMessagesCounter count={counter} />
-            <Users users={users} />
+            {counter}
+            <Users users={newUsers} />
         </div>
     );
 }
