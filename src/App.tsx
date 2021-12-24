@@ -8,6 +8,7 @@ import UnReiting from './components/Raiting/UnRaiting';
 import Select from './components/Select/Select';
 import {Example1} from "./components/ReactMemo/ReactMemo";
 import {Example2} from "./components/ReactMemo/UseMemo";
+import {UseUseCallBack} from "./components/ReactMemo/UseUseCallBack";
 
 
 export type UserType = {
@@ -73,6 +74,7 @@ const App = () => {
             <Select fruits={fruits} value={value} callBackSetValue={callBackSetValue}/>
             <Example1 />
             <Example2 />
+            <UseUseCallBack />
         </div>
     );
 }
