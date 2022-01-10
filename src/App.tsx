@@ -9,6 +9,7 @@ import Select from './components/Select/Select';
 import {Example1} from "./components/ReactMemo/ReactMemo";
 import {Example2} from "./components/ReactMemo/UseMemo";
 import {UseUseCallBack} from "./components/ReactMemo/UseUseCallBack";
+import LessonUseEffect from './components/UseEffect/LessonUseEffect';
 
 
 export type UserType = {
@@ -75,6 +76,7 @@ const App = () => {
             <Example1 />
             <Example2 />
             <UseUseCallBack />
+            <LessonUseEffect />
         </div>
     );
 }
