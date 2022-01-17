@@ -33,4 +33,28 @@ const LessonUseEffect = () => {
     );
 }
 
+export const SetTimeOutExample = () => {
+    const [fake, setFake] = useState<number>(1);
+    const [count, setCount] = useState<number>(1);
+
+    console.log("Set TimeOutExample");
+
+    useEffect(() => {
+        setTimeout(() => {
+            document.title = count.toString();
+        }, 1000);
+    }, [count]);
+
+    return(
+        <div>
+            <div>
+                Count: {count}
+                Fake: {fake}
+            </div>
+            <button onClick={() => { setCount(count + 1) }}>count +</button>
+            <button onClick={() => { setFake(fake + 1) }}> fake +</button>
+        </div>
+    );
+}
+
 export default LessonUseEffect;
