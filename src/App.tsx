@@ -10,9 +10,7 @@ import {Example1} from "./components/ReactMemo/ReactMemo";
 import {Example2} from "./components/ReactMemo/UseMemo";
 import {UseUseCallBack} from "./components/ReactMemo/UseUseCallBack";
 import LessonUseEffect from './components/UseEffect/LessonUseEffect';
-import { SetTimeOutExample } from './components/UseEffect/LessonUseEffect';
-import SetIntervalExample from './components/UseEffect/UseEffectSetInterval';
-
+import Clock from './components/Clock/Clock';
 
 export type UserType = {
     name: string
@@ -79,8 +77,7 @@ const App = () => {
             <Example2 />
             <UseUseCallBack />
             <LessonUseEffect />
-            <SetTimeOutExample />
-            <SetIntervalExample />
+            <Clock />
         </div>
     );
 }
