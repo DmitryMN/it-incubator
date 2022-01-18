@@ -7,11 +7,19 @@ const getDigit = (num: number) => {
 
 const Clock = () => {
     const [date, setDate] = useState(new Date());
+    
 
     useEffect(() => {
-        setInterval(() => {
+        const id = setInterval(() => {
+            console.log("tik");
             setDate(new Date());
         }, 1000);
+
+        return () => {
+            debugger;
+            clearInterval(id);
+        }
+
     }, []);
 
     return(
