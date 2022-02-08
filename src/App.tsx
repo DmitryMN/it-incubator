@@ -10,7 +10,7 @@ import {Example1} from "./components/ReactMemo/ReactMemo";
 import {Example2} from "./components/ReactMemo/UseMemo";
 import {UseUseCallBack} from "./components/ReactMemo/UseUseCallBack";
 import LessonUseEffect from './components/UseEffect/LessonUseEffect';
-import Clock from './components/Clock/Clock';
+import AnalogClock from './analog_clock/AnalogClock';
 
 export type UserType = {
     name: string
@@ -77,7 +77,7 @@ const App = () => {
             <Example2 />
             <UseUseCallBack />
             <LessonUseEffect />
-            <Clock />
+            <AnalogClock />
         </div>
     );
 }
